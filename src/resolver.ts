@@ -57,6 +57,16 @@ const resolvers = {
       _db.games.push(game);
       return game;
     },
+
+    updateGame(_: null, args: any) {
+      _db.games = _db.games.map((g) => {
+        if (g.id === args.id) {
+          return { ...g, ...args.edits };
+        }
+        return g;
+      });
+      return _db.games.find((g) => g.id === args.id);
+    },
   },
 };
 export default resolvers;
