@@ -15,8 +15,8 @@ const musicTypeDefs = `#graphql
      type Song{
         id: ID!
         songName: String!
-        artistId: String!
-        albumId: String!
+        artist: Artist!
+        album: Album!
      }
      
      type Query {

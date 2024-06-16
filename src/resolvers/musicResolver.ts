@@ -21,11 +21,19 @@ const musicResolvers = {
   Album: {
     artist(album: any) {
       return musicDB.artists.find((artist) => artist.id === album.artistId);
-      },
-    
-      songs(album: any) {
-          return musicDB.songs.filter(song=>song.albumId === album.id )
-      }
+    },
+
+    songs(album: any) {
+      return musicDB.songs.filter((song) => song.albumId === album.id);
+    },
+  },
+  Song: {
+    artist(song: any) {
+      return musicDB.artists.find((artist) => artist.id === song.artistId);
+    },
+    album(song: any) {
+      return musicDB.albums.find((album) => album.id === song.albumId);
+    },
   },
 };
 
