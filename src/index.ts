@@ -1,13 +1,16 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-import typeDefs from "./schema";
-import resolvers from "./resolver";
+import typeDefs from "./schemas/schema";
+import resolvers from "./resolvers/resolver";
 
-// server setup
+
+import musicTypeDefs from "./schemas/musicSchema";
+import musicResolvers from "./resolvers/musicResolver";
+
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  typeDefs: musicTypeDefs,
+  resolvers: musicResolvers,
 });
 
 (async () => {

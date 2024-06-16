@@ -1,4 +1,4 @@
-import _db from "./_db";
+import _db from "../data/_db";
 
 const resolvers = {
   Query: {
