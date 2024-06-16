@@ -27,7 +27,24 @@ const musicTypeDefs = `#graphql
         album(id: ID!): Album
         song(id: ID!): Song
      }
-`;
 
+     type Mutation {
+        deleteSong(id: ID!): [Song]
+        addSong(song: AddSongInput!): Song
+        updateSong(id: ID!, edits: EditSongInput!): Song
+     }
+
+     input AddSongInput{
+        songName: String!
+        artistId: String!
+        albumId: String!
+     } 
+
+     input EditSongInput{
+        songName: String
+        artistId: String
+        albumId: String
+     } 
+`;
 
 export default musicTypeDefs;
