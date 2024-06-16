@@ -5,11 +5,20 @@ const musicResolvers = {
     artists() {
       return musicDB.artists;
     },
+    artist(_: null, args: any) {
+      return musicDB.artists.find((artist) => artist.id === args.id);
+    },
     albums() {
       return musicDB.albums;
     },
+    album(_: any, args: any) {
+      return musicDB.albums.find((album) => album.id === args.id);
+    },
     songs() {
       return musicDB.songs;
+    },
+    song(_: any, args: any) {
+      return musicDB.songs.find((song) => song.id === args.id);
     },
   },
 

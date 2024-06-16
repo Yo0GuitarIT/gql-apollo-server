@@ -22,7 +22,10 @@ const musicTypeDefs = `#graphql
      type Query {
         artists: [Artist]
         albums: [Album]
-        songs: [Song] 
+        songs: [Song]
+        artist(id: ID!): Artist
+        album(id: ID!): Album
+        song(id: ID!): Song
      }
 `;
 
